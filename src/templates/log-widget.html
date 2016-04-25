@@ -1,0 +1,7 @@
+<rd-widget>
+    <rd-widget-header icon="{{icon}}" title="{{name}}">
+    </rd-widget-header>
+    <rd-widget-body classes="large logs">
+        <div ng-repeat="msg in log track by $index"><span ng-bind-html="msg | to_trusted"></span></div>
+    </rd-widget-body>
+</rd-widget>

@@ -1,0 +1,26 @@
+<rd-widget>
+    <rd-widget-header icon="{{icon}}" title="{{name}}">
+    </rd-widget-header>
+    <rd-widget-body classes="medium no-padding">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr ng-if="rows[0]">
+                    <th ng-repeat="(key, value) in rows[0]">{{key}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in rows">
+                    <td ng-repeat="value in row">{{value}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </rd-widget-body>
+    <rd-widget-footer ng-if="showPagination">
+        <uib-pagination total-items="totalItems" items-per-page="limit" max-size="maxSize"
+                        boundary-link-numbers="true"
+                        ng-model="currentPage" ng-change="pagination(currentPage)"></uib-pagination>
+        <div class="clearfix"></div>
+    </rd-widget-footer>
+</rd-widget>

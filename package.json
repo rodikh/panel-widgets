@@ -1,0 +1,12 @@
+{
+  "name": "chegg-panel-widgets",
+  "version": "0.0.1",
+  "repository": "https://github.com/rodikh/chegg-panel-widgets.git",
+  "description": "Core widgets for the Chegg panel",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

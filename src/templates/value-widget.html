@@ -1,0 +1,12 @@
+<rd-widget>
+    <rd-widget-body ng-if="loading">
+        <rd-loading class="small-loading"></rd-loading>
+    </rd-widget-body>
+    <rd-widget-body ng-if="!loading">
+        <div class="widget-icon {{color}} pull-left">
+            <i class="fa {{icon}}"></i>
+        </div>
+        <div class="title">{{value}}</div>
+        <div class="comment">{{name}}</div>
+    </rd-widget-body>
+</rd-widget>

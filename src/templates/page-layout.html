@@ -1,0 +1,15 @@
+<div class="row alerts-container" data-ng-show="alerts.length">
+    <div class="col-xs-12">
+        <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+    </div>
+</div>
+
+<div class="row" ng-repeat="row in pageLayout">
+    <div ng-repeat="widget in row" ng-class="[widget.widgetClass, {'col-lg-12':!widget.widgetClass, 'col-lg-3 col-md-6 col-xs-12':widget.type=='value'}]">
+        <value-widget ng-if="widget.type=='value'" name="{{widget.name}}" icon="{{widget.icon}}" source="widget.source" key="widget.key" color="widget.color"></value-widget>
+        <log-widget ng-if="widget.type=='log'" name="{{widget.name}}" icon="{{widget.icon}}" config="widget.config"></log-widget>
+        <review-widget ng-if="widget.type=='list'" name="{{widget.name}}" icon="{{widget.icon}}" queryfunction="widget.queryfunction" config="widget.config"></review-widget>
+        <chart-widget ng-if="widget.type=='chart'" name="{{widget.name}}" icon="{{widget.icon}}" data="widget.data" labels="widget.labels" series="widget.series" config="widget.config"></chart-widget>
+        <executor-widget ng-if="widget.type=='executor'" name="{{widget.name}}" icon="{{widget.icon}}"></executor-widget>
+    </div>
+</div>

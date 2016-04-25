@@ -1,0 +1,33 @@
+<rd-widget>
+    <rd-widget-header icon="{{icon}}" title="{{name}}" bootstrap-sizes="col-md-11 col-lg-10">
+        <filters-widget config="config.filters" filters="filters"></filters-widget>
+    </rd-widget-header>
+    <rd-widget-body classes="no-padding {{config.widgetBodyClasses}}">
+        <rd-loading ng-show="loading"></rd-loading>
+        <div ng-hide="loading">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr ng-if="rows[0]">
+                        <th ng-repeat="value in fixedRowMask">{{value | titleCase}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat-start="row in rows" ng-class="config.rowClass(row)" ng-click="toggleRow($index)">
+                        <td ng-repeat="value in fixedRowMask">
+                            <span ng-if="typeof (config.customFields[value]) == function" compile="config.customFields[value](row)"></span>
+                            <span ng-if="config.customFields[value] == undefined">{{row[value]}}</span>
+                        </td>
+                    </tr>
+                    <tr ng-repeat-end compile="config.innerDirective"></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </rd-widget-body>
+    <rd-widget-footer ng-if="config.showPagination==undefined || config.showPagination == true">
+        <uib-pagination total-items="totalItems" items-per-page="limit" max-size="maxSize"
+                        boundary-link-numbers="true"
+                        ng-model="currentPage" ng-change="pagination(currentPage)"></uib-pagination>
+    </rd-widget-footer>
+</rd-widget>

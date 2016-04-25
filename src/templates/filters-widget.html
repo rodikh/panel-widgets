@@ -1,0 +1,21 @@
+<div ng-repeat="filter in config">
+    <div class="col-lg-2" ng-if="filter.type=='select'">
+        <select class="form-control input-sm" ng-model="filters[filter.name]" ng-change="updatedFilters()">
+            <option ng-repeat="option in filter.options" value="{{option}}">{{option}}</option>
+        </select>
+    </div>
+
+    <div class="col-lg-3" ng-if="filter.type=='input'">
+        <input class="form-control input-sm" type="text" ng-change="updatedFilters()" ng-model="filters[filter.name]"
+               ng-model-options='{ debounce: 700 }' placeholder="{{filter.placeholder}}">
+    </div>
+    <div class="col-lg-3 btn-group" ng-if="filter.type=='radio'">
+        <label class="btn btn-sm btn-primary" ng-repeat="option in filter.options" ng-model="filters[filter.name]"
+               ng-change="updatedFilters()" uib-btn-radio="option">{{option}}</label>
+    </div>
+
+    <div class="col-lg-4 btn-group" ng-if="filter.type=='flags'" ng-init="filters[filter.name]={}">
+        <label class="btn btn-sm btn-primary" ng-repeat="option in filter.options" uib-btn-checkbox
+               ng-model="filters[filter.name][option]" ng-change="updatedFilters()">{{option}}</label>
+    </div>
+</div>
