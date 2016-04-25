@@ -1,7 +1,7 @@
 {
-  "name": "chegg-panel-widgets",
+  "name": "panel-widgets",
   "version": "0.0.1",
-  "repository": "https://github.com/rodikh/chegg-panel-widgets.git",
+  "repository": "https://github.com/rodikh/panel-widgets.git",
   "description": "Core widgets for the Chegg panel",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
