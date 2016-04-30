@@ -1,0 +1,24 @@
+{
+  "name": "panel-widgets",
+  "description": "Core widgets for the Chegg panel",
+  "main": "dist/widgets-with-templates.min.js",
+  "authors": [
+    "Rodik Hanukaev <rodik@chegg.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular-socket-io": "*",
+    "angular-chart.js": "~0.8.6"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ]
+}
