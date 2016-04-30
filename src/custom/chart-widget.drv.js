@@ -5,9 +5,9 @@
 
 angular
     .module('chegg-panel-widgets')
-    .directive('chartWidget', ['mySocket', chartWidget]);
+    .directive('chartWidget', [chartWidget]);
 
-function chartWidget(mySocket) {
+function chartWidget() {
     return {
         templateUrl: 'chegg-panel-widgets/chart-widget.html',
         restrict: 'EA',
@@ -35,11 +35,11 @@ function chartWidget(mySocket) {
             }
 
             if ($scope.config.socketEvent) {
-                mySocket.emit($scope.config.socketEvent+' tail', function (log) {
+                $scope.config.socket.emit($scope.config.socketEvent+' tail', function (log) {
                     updateLog(log);
 
                 });
-                mySocket.forward($scope.config.socketEvent+' log', $scope);
+                $scope.config.socket.forward($scope.config.socketEvent+' log', $scope);
                 $scope.$on('socket:'+$scope.config.socketEvent+' log', function (ev, log) {
                     updateLog(log);
                 });

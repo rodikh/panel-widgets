@@ -4,9 +4,9 @@
 
 angular
     .module('chegg-panel-widgets')
-    .directive('logWidget', ['mySocket', logWidget]);
+    .directive('logWidget', [logWidget]);
 
-function logWidget(mySocket) {
+function logWidget() {
     return {
         templateUrl: 'chegg-panel-widgets/log-widget.html',
         restrict: 'EA',
@@ -19,10 +19,10 @@ function logWidget(mySocket) {
             var MAX_LOG_LENGTH = 100;
 
             var logId = $scope.config.foreverPid;
-            mySocket.emit('forever tail', logId, function (log) {
+            $scope.config.socket.emit('forever tail', logId, function (log) {
                 $scope.log = log;
             });
-            mySocket.forward('forever log ' + logId, $scope);
+            $scope.config.socket.forward('forever log ' + logId, $scope);
             $scope.$on('socket:forever log ' + logId, function (ev, data) {
                 $scope.log.push(data);
                 if ($scope.log.length > MAX_LOG_LENGTH) {
