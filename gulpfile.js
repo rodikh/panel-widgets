@@ -1,9 +1,7 @@
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    minifyJs = require('gulp-uglify'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
-    minifyHTML = require('gulp-minify-html'),
     templateCache = require('gulp-angular-templatecache');
 
 var paths = {

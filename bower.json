@@ -10,7 +10,6 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "angular-socket-io": "*",
     "angular-chart.js": "~0.8.6"
   },
   "ignore": [
