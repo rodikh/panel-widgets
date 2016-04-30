@@ -10,7 +10,7 @@ function reviewWidget() {
     return {
         templateUrl: 'chegg-panel-widgets/review-widget.html',
         restrict: 'EA',
-        controller: ['$scope', '$controller', function($scope, $controller) {
+        controller: ['$scope', '$controller', function ($scope, $controller) {
             if ($scope.config && $scope.config.reviewController) {
                 return $controller($scope.config.reviewController, {$scope: $scope});
             }
@@ -27,7 +27,7 @@ function reviewWidget() {
                 console.error('ERROR:: List Widget: Source data malformed');
                 return false;
             }
-            scope.fixedRowMask = (scope.config && scope.config.rowsMask)?scope.config.rowsMask:[];
+            scope.fixedRowMask = (scope.config && scope.config.rowsMask) ? scope.config.rowsMask : [];
 
             scope.limit = (scope.config && scope.config.pageSize) ? scope.config.pageSize : 20;
             scope.maxSize = 6;
@@ -60,10 +60,14 @@ function reviewWidget() {
 
                 });
             };
-            scope.$watch('filters', function() {
-               scope.pagination();
-            }, true);
-            scope.pagination();
+
+            if (scope.config.filters) {
+                scope.$watch('filters', function () {
+                    scope.pagination();
+                }, true);
+            } else {
+                scope.pagination();         // no need to init twice, $watch auto runs first time.
+            }
 
             scope.toggleRow = function (index) {
                 angular.element(element[0].querySelector('.hiddenRow' + index)).toggleClass('collapse');
