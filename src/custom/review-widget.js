@@ -61,7 +61,7 @@ function reviewWidget() {
                 });
             };
 
-            if (scope.config.filters) {
+            if (scope.config && scope.config.filters) {
                 scope.$watch('filters', function () {
                     scope.pagination();
                 }, true);
