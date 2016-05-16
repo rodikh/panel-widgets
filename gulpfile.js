@@ -27,7 +27,7 @@ gulp.task('custom-templates', function () {
 
 gulp.task('dist', ['custom-js', 'custom-templates'], function () {
     return gulp.src(['dist/widgets.min.js','dist/templates.js'])
-        .pipe(concat('widgets-with-templates.min.js'))
+        .pipe(concat('widgets-with-templates.js'))
         .pipe(gulp.dest('dist/'));
 });
 

@@ -1,7 +1,7 @@
 {
   "name": "panel-widgets",
   "description": "Core widgets for the Chegg panel",
-  "main": "dist/widgets-with-templates.min.js",
+  "main": "dist/widgets-with-templates.js",
   "authors": [
     "Rodik Hanukaev <rodik@chegg.com>"
   ],
