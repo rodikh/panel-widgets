@@ -34,10 +34,16 @@ function reviewWidget() {
             scope.loading = true;
             scope.filters = {};
 
+            var lastPromise;
             scope.pagination = function (currentPage) {
                 scope.currentPage = currentPage || (scope.currentPage || 1);
                 scope.loading = true;
-                scope.queryfunction((scope.currentPage - 1) * scope.limit, scope.limit, scope.filters).then(function (data) {
+                if (lastPromise) {
+                    console.log('TODO REJECT PROMISE');
+                    // lastPromise.reject();
+                }
+                lastPromise = scope.queryfunction((scope.currentPage - 1) * scope.limit, scope.limit, scope.filters);
+                lastPromise.then(function (data) {
                     scope.loading = false;
                     scope.totalItems = data.count;
 
@@ -72,6 +78,10 @@ function reviewWidget() {
             scope.toggleRow = function (index) {
                 angular.element(element[0].querySelector('.hiddenRow' + index)).toggleClass('collapse');
             };
+
+            scope.refreshList = function () {
+                scope.pagination();
+            }
         }
     };
 }

@@ -3,7 +3,8 @@ angular.module('chegg-panel-widgets',
     [
         'ngSanitize',
         'ui.bootstrap',
-        'chart.js'
+        'chart.js',
+        'jsonFormatter'
     ]
 ).config(["ChartJsProvider",
     function (ChartJsProvider) {
