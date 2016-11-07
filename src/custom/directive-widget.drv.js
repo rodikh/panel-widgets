@@ -2,14 +2,17 @@
 
 angular
     .module('chegg-panel-widgets')
-    .directive('directiveWidget', ['$compile', directiveWidget]);
+    .directive('directiveWidget', [directiveWidget]);
 
-function directiveWidget($compile) {
+function directiveWidget() {
     return {
         templateUrl: 'chegg-panel-widgets/directive-widget.html',
         restrict: 'EA',
-        link: function (scope, element, attrs) {
-            scope.directive = attrs.directive;
+        scope: {
+            name: '@',
+            icon: '@',
+            directive: '=',
+            config: '='
         }
     };
 }
