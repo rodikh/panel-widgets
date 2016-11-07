@@ -1,0 +1,8 @@
+<rd-widget>
+    <rd-widget-body ng-if="loading">
+        <rd-loading class="small-loading"></rd-loading>
+    </rd-widget-body>
+    <rd-widget-body ng-if="!loading">
+        <div compile="directive"></div>
+    </rd-widget-body>
+</rd-widget>
