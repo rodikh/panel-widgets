@@ -10,7 +10,7 @@ angular
 
 function innerJson() {
     return {
-        templateUrl: 'templates/innerJson.html',
+        templateUrl: 'templates/inner-json.html',
         restrict: 'EA',
         replace: true,
         link: function (scope, element, attrs) {
