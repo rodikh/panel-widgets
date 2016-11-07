@@ -9,6 +9,7 @@ function directiveWidget($compile) {
         templateUrl: 'chegg-panel-widgets/directive-widget.html',
         restrict: 'EA',
         link: function (scope, element, attrs) {
+            scope.directive = attrs.directive;
         }
     };
 }
