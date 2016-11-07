@@ -1,7 +1,7 @@
 "use strict";
 
 angular
-    .module('RDash')
+    .module('chegg-panel-widgets')
     .directive('directiveWidget', ['$compile', directiveWidget]);
 
 function directiveWidget($compile) {
