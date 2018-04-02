@@ -1,7 +1,10 @@
 <rd-widget>
     <rd-widget-header icon="{{icon}}" title="{{name}}">
     </rd-widget-header>
-    <rd-widget-body>
+    <rd-widget-body ng-if="loading">
+        <rd-loading class="small-loading"></rd-loading>
+    </rd-widget-body>
+    <rd-widget-body ng-if="!loading">
         <canvas class="chart chart-base" chart-type="chartType" chart-data="data" chart-labels="labels" chart-options="options"
                 chart-series="series" chart-colors="colors" chart-click="onClick" chart-hover="onHover" chart-dataset-override="datasetOverride"></canvas>
     </rd-widget-body>

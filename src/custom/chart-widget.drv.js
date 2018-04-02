@@ -29,7 +29,10 @@ function chartWidget() {
             $scope.datasetOverride = $scope.config.datasetOverride;
 
             if ($scope.config.source && $scope.config.source.then) {
+                $scope.loading = true;
                 $scope.config.source.then((result)=>{
+                    $scope.loading = false;
+
                     if (result.data) {
                         $scope.labels = result.labels;
                         $scope.series = result.series;
@@ -38,7 +41,6 @@ function chartWidget() {
                         $scope.labels = result.map(function(item){return item.label});
                         $scope.data = result.map(function(item){return item.value});
                     }
-
                 });
             }
             if ($scope.config.queryfunction) {
