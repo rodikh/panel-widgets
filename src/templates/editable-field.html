@@ -1,0 +1,5 @@
+<span ng-if="editableField == 'string'">
+    <span ng-show="!expand" ng-click="onclick()" ng-bind="editableValue||'undefined'"></span>
+    <input ng-show="expand" ng-model="$parent.editableValue" ng-blur="onblur()">
+    <i ng-if="status.result!=0 && !expand" class="menu-icon fa {{status.result}}" style="color:{{status.resultColor}};" uib-tooltip="{{status.error}}"></i>
+</span>

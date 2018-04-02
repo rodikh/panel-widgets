@@ -14,12 +14,17 @@ function chartWidget() {
         scope: {
             name: '@',
             icon: '@',
+            queryfunction: '=',
             config: '='
         },
         link: function ($scope, element, attrs) {
             $scope.labels = [9, 8, 7, 6, 5, 4, 3, 2, 1];
             $scope.series = [];
             $scope.data = [];
+
+            if ($scope.config.queryfunction) {
+
+            }
 
             function updateLog(log) {
                 // TODO: clean this up, make generalized
@@ -43,7 +48,6 @@ function chartWidget() {
                 $scope.$on('socket:'+$scope.config.socketEvent+' log', function (ev, log) {
                     updateLog(log);
                 });
-
             }
         }
     };

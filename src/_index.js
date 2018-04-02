@@ -9,9 +9,16 @@ angular.module('chegg-panel-widgets',
 ).config(["ChartJsProvider",
     function (ChartJsProvider) {
         ChartJsProvider.setOptions({
-            colours: ['#FF5252', '#FF8A80'],
             responsive: true,
-            animation: false
+            animation: false,
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        min: 0
+                    }
+                }]
+            }
         });
     }
 ]);
