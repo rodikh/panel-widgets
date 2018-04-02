@@ -4,14 +4,14 @@
 "use strict";
 
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('valueWidget', [valueWidget]);
 
 function valueWidget() {
     var iconColors = ['green','red','orange','blue'];
 
     return {
-        templateUrl: 'chegg-panel-widgets/value-widget.html',
+        templateUrl: 'panel-widgets/src/templates/value-widget.html',
         restrict: 'EA',
         scope: {
             name: '@',

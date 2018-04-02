@@ -1,5 +1,10 @@
-"use strict";
-angular.module('chegg-panel-widgets',
+// import angular from "angular";
+// import 'angular-sanitize';
+// import 'angular-chart.js';
+// import 'angular-ui-bootstrap';
+// import 'jsonformatter';
+
+export default angular.module('panel-widgets',
     [
         'ngSanitize',
         'ui.bootstrap',
@@ -21,4 +26,4 @@ angular.module('chegg-panel-widgets',
             }
         });
     }
-]);
+]).name;

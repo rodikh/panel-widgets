@@ -4,7 +4,7 @@
  */
 
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('rdLoading', rdLoading);
 
 function rdLoading() {

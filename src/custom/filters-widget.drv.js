@@ -3,12 +3,12 @@
  */
 "use strict";
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('filtersWidget', [filtersWidget]);
 
 function filtersWidget() {
     return {
-        templateUrl: 'chegg-panel-widgets/filters-widget.html',
+        templateUrl: 'panel-widgets/src/templates/filters-widget.html',
         restrict: 'EA',
         scope: {
             config: "=",

@@ -1,7 +1,7 @@
 "use strict";
 
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('compile', ['$compile', compile]);
 
 function compile ($compile) {
