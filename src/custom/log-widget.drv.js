@@ -3,12 +3,12 @@
  */
 
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('logWidget', [logWidget]);
 
 function logWidget() {
     return {
-        templateUrl: 'chegg-panel-widgets/log-widget.html',
+        templateUrl: 'panel-widgets/src/templates/log-widget.html',
         restrict: 'EA',
         scope: {
             name: '@',

@@ -3,12 +3,12 @@
  */
 "use strict";
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('listWidget', ["DataService", listWidget]);
 
 function listWidget(DataService) {
     var directive = {
-        templateUrl: 'chegg-panel-widgets/list-widget.html',
+        templateUrl: 'panel-widgets/src/templates/list-widget.html',
         restrict: 'EA',
         scope: {
             name: '@',

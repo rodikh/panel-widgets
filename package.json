@@ -1,27 +1,27 @@
 {
   "name": "panel-widgets",
-  "version": "1.0.0",
-  "repository": "https://github.com/rodikh/panel-widgets.git",
+  "version": "2.0.0",
+  "main": "./src/index.js",
+  "repository": "https://rodik@bitbucket.cheggnet.com/scm/mb/site-panel-widgets.git",
   "description": "Core widgets for the Chegg panel",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "bower install --allow-root && gulp build"
+    "postinstall": "npm run build"
   },
   "dependencies": {
-    "bower": "^1.3.9",
-    "gulp": "^3.9.1",
-    "gulp-angular-templatecache": "^1.8.0",
-    "gulp-concat": "^2.4.1",
-    "gulp-connect": "^3.2.2",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-minify-html": "^1.0.6",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^2.3.1",
-    "gulp-uglify": "^1.0.1",
-    "gulp-usemin": "^0.3.7",
-    "gulp-watch": "^4.3.5",
-    "gulp-wrap": "^0.11.0",
-    "node-sass": "^3.5.3"
+    "angular": "^1.6.9",
+    "angular-chart.js": "^1.1.1",
+    "angular-sanitize": "^1.6.9",
+    "angular-ui-bootstrap": "^2.5.6",
+    "jsonformatter": "^0.7.0",
+    "node-sass": "^3.5.3",
+    "angular-templatecache-loader": "^0.2.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13"
   },
   "author": "",
   "license": "ISC"

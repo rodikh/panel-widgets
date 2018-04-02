@@ -3,12 +3,12 @@
  */
 "use strict";
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('editableField', [EditableField]);
 
 function EditableField() {
     return {
-        templateUrl: 'chegg-panel-widgets/editable-field.html',
+        templateUrl: 'panel-widgets/src/templates/editable-field.html',
         restrict: 'EA',
         scope: {
             editableValue: "=",

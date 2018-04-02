@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module('chegg-panel-widgets')
+angular.module('panel-widgets')
     .filter('titleCase', [titleCaseFil]);
 
 function titleCaseFil() {

@@ -4,12 +4,12 @@
 "use strict";
 
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('chartWidget', [chartWidget]);
 
 function chartWidget() {
     return {
-        templateUrl: 'chegg-panel-widgets/chart-widget.html',
+        templateUrl: 'panel-widgets/src/templates/chart-widget.html',
         restrict: 'EA',
         scope: {
             name: '@',

@@ -3,12 +3,12 @@
  */
 
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('reviewWidget', [reviewWidget]);
 
 function reviewWidget() {
     return {
-        templateUrl: 'chegg-panel-widgets/review-widget.html',
+        templateUrl: 'panel-widgets/src/templates/review-widget.html',
         restrict: 'EA',
         controller: ['$scope', '$controller', function ($scope, $controller) {
             if ($scope.config && $scope.config.reviewController) {

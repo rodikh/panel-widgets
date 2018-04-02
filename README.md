@@ -1,2 +1,2 @@
-# chegg-panel-widgets
+# panel-widgets
 Core widgets for the Chegg panel

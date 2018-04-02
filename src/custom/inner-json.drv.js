@@ -5,12 +5,12 @@
 "use strict";
 
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('innerJson', [innerJson]);
 
 function innerJson() {
     return {
-        templateUrl: 'chegg-panel-widgets/inner-json.html',
+        templateUrl: 'panel-widgets/src/templates/inner-json.html',
         restrict: 'EA',
         replace: true,
         link: function (scope, element, attrs) {

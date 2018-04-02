@@ -3,7 +3,7 @@
  */
 
 angular
-    .module('chegg-panel-widgets')
+    .module('panel-widgets')
     .directive('rdWidgetHeader', rdWidgetTitle);
 
 function rdWidgetTitle() {
