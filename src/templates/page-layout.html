@@ -9,7 +9,7 @@
         <value-widget ng-if="widget.type=='value'" name="{{widget.name}}" icon="{{widget.icon}}" source="widget.source" key="widget.key" color="widget.color"></value-widget>
         <log-widget ng-if="widget.type=='log'" name="{{widget.name}}" icon="{{widget.icon}}" config="widget.config"></log-widget>
         <review-widget ng-if="widget.type=='list'" name="{{widget.name}}" icon="{{widget.icon}}" queryfunction="widget.queryfunction" config="widget.config"></review-widget>
-        <chart-widget ng-if="widget.type=='chart'" name="{{widget.name}}" icon="{{widget.icon}}" queryfunction="widget.queryfunction" data="widget.data" labels="widget.labels" series="widget.series" config="widget.config"></chart-widget>
+        <chart-widget ng-if="widget.type=='chart'" name="{{widget.name}}" icon="{{widget.icon}}" queryfunction="widget.queryfunction" config="widget.config"></chart-widget>
         <executor-widget ng-if="widget.type=='executor'" name="{{widget.name}}" icon="{{widget.icon}}"></executor-widget>
         <directive-widget ng-if="widget.type=='directive'" name="{{widget.name}}" icon="{{widget.icon}}" directive="widget.directive" config="widget.config">
     </div>

@@ -14,39 +14,38 @@ function chartWidget() {
         scope: {
             name: '@',
             icon: '@',
-            queryfunction: '=',
+            queryfunction: '&',
             config: '='
         },
         link: function ($scope, element, attrs) {
-            $scope.labels = [9, 8, 7, 6, 5, 4, 3, 2, 1];
-            $scope.series = [];
-            $scope.data = [];
+            $scope.chartType = $scope.config.chartType;
+            $scope.options = $scope.config.options;
+            $scope.labels = $scope.config.labels;
+            $scope.series = $scope.config.series;
+            $scope.data = $scope.config.data;
+            $scope.colors = $scope.config.colors;
+            $scope.onClick = $scope.config.onClick;
+            $scope.onHover = $scope.config.onHover;
+            $scope.datasetOverride = $scope.config.datasetOverride;
 
-            if ($scope.config.queryfunction) {
-
-            }
-
-            function updateLog(log) {
-                // TODO: clean this up, make generalized
-                //console.log('chart log', log);
-                var i = 0;
-                var series = [];
-                for (var key in log) {
-                    series.push(key);
-                    $scope.data[i] = log[key].active;
-                    i++;
-                }
-                $scope.series = series;
-            }
-
-            if ($scope.config.socketEvent) {
-                $scope.config.socket.emit($scope.config.socketEvent+' tail', function (log) {
-                    updateLog(log);
+            if ($scope.config.source && $scope.config.source.then) {
+                $scope.config.source.then((result)=>{
+                    if (result.data) {
+                        $scope.labels = result.labels;
+                        $scope.series = result.series;
+                        $scope.data = result.data;
+                    } else {
+                        $scope.labels = result.map(function(item){return item.label});
+                        $scope.data = result.map(function(item){return item.value});
+                    }
 
                 });
-                $scope.config.socket.forward($scope.config.socketEvent+' log', $scope);
-                $scope.$on('socket:'+$scope.config.socketEvent+' log', function (ev, log) {
-                    updateLog(log);
+            }
+            if ($scope.config.queryfunction) {
+                $scope.config.queryfunction().then((result)=>{
+                    $scope.labels = result.labels;
+                    $scope.series = result.labels;
+                    $scope.data = result.data;
                 });
             }
         }
