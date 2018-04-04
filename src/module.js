@@ -1,8 +1,5 @@
-// import angular from "angular";
-// import 'angular-sanitize';
-// import 'angular-chart.js';
-// import 'angular-ui-bootstrap';
-// import 'jsonformatter';
+import 'angular-chart.js';
+import 'jsonformatter';
 
 export default angular.module('panel-widgets',
     [
